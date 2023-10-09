@@ -1,5 +1,7 @@
+
+
 CREATE TABLE Advertisement(
-                              idAd INT,
+                              idAd INT NOT NULL AUTO_INCREMENT,
                               nomAd VARCHAR(200),
                               dateCreationAd DATETIME,
                               descriptionAd TEXT,
@@ -10,7 +12,7 @@ CREATE TABLE Advertisement(
 );
 
 CREATE TABLE UserApplicant(
-                              idUser BYTE,
+                              idUser INT NULL AUTO_INCREMENT,
                               nameUser VARCHAR(100) NOT NULL,
                               emailUser VARCHAR(255) NOT NULL,
                               passwordUser TEXT,
@@ -20,7 +22,7 @@ CREATE TABLE UserApplicant(
 );
 
 CREATE TABLE UserCom(
-                        idUserCom BYTE,
+                        idUserCom INT NULL AUTO_INCREMENT,
                         nameUserCom VARCHAR(100) NOT NULL,
                         emailuserCom VARCHAR(255) NOT NULL,
                         passwordUserCom TEXT,
@@ -30,22 +32,19 @@ CREATE TABLE UserCom(
 );
 
 CREATE TABLE Companie(
-                         idCom BYTE,
+                         idCom INT NULL AUTO_INCREMENT,
                          nomCom VARCHAR(100),
                          descriptionCom TEXT,
                          addressCom VARCHAR(150),
                          villeCom VARCHAR(100),
                          nbEmployeeCom INT,
-                         idAd INT NOT NULL,
-                         idUserCom BYTE NOT NULL,
-                         PRIMARY KEY(idCom),
-                         FOREIGN KEY(idAd) REFERENCES Advertisement(idAd),
-                         FOREIGN KEY(idUserCom) REFERENCES UserCom(idUserCom)
+                         PRIMARY KEY(idCom)
+
 );
 
 CREATE TABLE JobApplication(
                                idAd INT,
-                               idUser BYTE,
+                               idUser INT,
                                dateCreationJA DATETIME,
                                PRIMARY KEY(idAd, idUser),
                                FOREIGN KEY(idAd) REFERENCES Advertisement(idAd),
