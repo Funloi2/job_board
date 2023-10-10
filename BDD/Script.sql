@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Advertisement` (
-                                 `idAd` int(11) NOT NULL,
-                                 `nomAd` varchar(200) DEFAULT NULL,
-                                 `dateCreationAd` datetime DEFAULT NULL,
-                                 `descriptionAd` text DEFAULT NULL,
-                                 `salaireAd` int(11) DEFAULT NULL,
-                                 `typeAd` varchar(50) DEFAULT NULL,
-                                 `contractAd` varchar(50) DEFAULT NULL,
-                                 `idCom` int(11) NOT NULL
+  `idAd` int(11) NOT NULL,
+  `nomAd` varchar(200) DEFAULT NULL,
+  `dateCreationAd` datetime DEFAULT NULL,
+  `descriptionAd` text DEFAULT NULL,
+  `salaireAd` int(11) DEFAULT NULL,
+  `typeAd` varchar(50) DEFAULT NULL,
+  `contractAd` varchar(50) DEFAULT NULL,
+  `idCom` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -44,8 +44,8 @@ CREATE TABLE `Advertisement` (
 --
 
 INSERT INTO `Advertisement` (`idAd`, `nomAd`, `dateCreationAd`, `descriptionAd`, `salaireAd`, `typeAd`, `contractAd`, `idCom`) VALUES
-                                                                                                                                   (1, 'Poste dev 1', '2023-10-09 14:43:40', 'super poste', 300, 'CDI', 'FULL REMOTE', 1),
-                                                                                                                                   (2, 'Réseau', '2023-10-09 14:43:40', 'sijdnzdzabdukcqfre', 301, 'CDI', 'SEMI REMOTE', 1);
+(1, 'Poste dev 1', '2023-10-09 14:43:40', 'super poste', 300, 'CDI', 'FULL REMOTE', 1),
+(2, 'Réseau', '2023-10-09 14:43:40', 'sijdnzdzabdukcqfre', 301, 'CDI', 'SEMI REMOTE', 1);
 
 -- --------------------------------------------------------
 
@@ -54,12 +54,12 @@ INSERT INTO `Advertisement` (`idAd`, `nomAd`, `dateCreationAd`, `descriptionAd`,
 --
 
 CREATE TABLE `Companie` (
-                            `idCom` int(11) NOT NULL,
-                            `nomCom` varchar(100) DEFAULT NULL,
-                            `descriptionCom` text DEFAULT NULL,
-                            `addressCom` varchar(150) DEFAULT NULL,
-                            `villeCom` varchar(100) DEFAULT NULL,
-                            `nbEmployeeCom` int(11) DEFAULT NULL
+  `idCom` int(11) NOT NULL,
+  `nomCom` varchar(100) DEFAULT NULL,
+  `descriptionCom` text DEFAULT NULL,
+  `addressCom` varchar(150) DEFAULT NULL,
+  `villeCom` varchar(100) DEFAULT NULL,
+  `nbEmployeeCom` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `Companie` (
 --
 
 INSERT INTO `Companie` (`idCom`, `nomCom`, `descriptionCom`, `addressCom`, `villeCom`, `nbEmployeeCom`) VALUES
-    (1, 'Ubisoft', 'dzdzdzdz', 'dzdzd', 'Montpellier', 50);
+(1, 'Ubisoft', 'dzdzdzdz', 'dzdzd', 'Montpellier', 50);
 
 -- --------------------------------------------------------
 
@@ -76,9 +76,9 @@ INSERT INTO `Companie` (`idCom`, `nomCom`, `descriptionCom`, `addressCom`, `vill
 --
 
 CREATE TABLE `JobApplication` (
-                                  `idAd` int(11) NOT NULL,
-                                  `idUser` int(11) NOT NULL,
-                                  `dateCreationJA` datetime DEFAULT NULL
+  `idAd` int(11) NOT NULL,
+  `idUser` int(11) NOT NULL,
+  `dateCreationJA` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -88,12 +88,12 @@ CREATE TABLE `JobApplication` (
 --
 
 CREATE TABLE `UserApplicant` (
-                                 `idUser` int(11) NOT NULL,
-                                 `nameUser` varchar(100) NOT NULL,
-                                 `emailUser` varchar(255) NOT NULL,
-                                 `passwordUser` text DEFAULT NULL,
-                                 `dateCreationUser` datetime DEFAULT NULL,
-                                 `usernameUser` varchar(50) NOT NULL
+  `idUser` int(11) NOT NULL,
+  `nameUser` varchar(100) NOT NULL,
+  `emailUser` varchar(255) NOT NULL,
+  `passwordUser` text DEFAULT NULL,
+  `dateCreationUser` datetime DEFAULT NULL,
+  `usernameUser` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -101,7 +101,7 @@ CREATE TABLE `UserApplicant` (
 --
 
 INSERT INTO `UserApplicant` (`idUser`, `nameUser`, `emailUser`, `passwordUser`, `dateCreationUser`, `usernameUser`) VALUES
-    (1, 'dorian', 'dndjzu@fefef', 'dzfefe', '2023-10-09 14:42:58', 'Doddo');
+(1, 'dorian', 'dndjzu@fefef', 'dzfefe', '2023-10-09 14:42:58', 'Doddo');
 
 -- --------------------------------------------------------
 
@@ -110,13 +110,13 @@ INSERT INTO `UserApplicant` (`idUser`, `nameUser`, `emailUser`, `passwordUser`, 
 --
 
 CREATE TABLE `UserCom` (
-                           `idUserCom` int(11) NOT NULL,
-                           `nameUserCom` varchar(100) NOT NULL,
-                           `emailuserCom` varchar(255) NOT NULL,
-                           `passwordUserCom` text DEFAULT NULL,
-                           `dateCreationUserCom` datetime DEFAULT NULL,
-                           `usernameUserCom` varchar(50) NOT NULL,
-                           `idCom` int(11) NOT NULL
+  `idUserCom` int(11) NOT NULL,
+  `nameUserCom` varchar(100) NOT NULL,
+  `emailuserCom` varchar(255) NOT NULL,
+  `passwordUserCom` text DEFAULT NULL,
+  `dateCreationUserCom` datetime DEFAULT NULL,
+  `usernameUserCom` varchar(50) NOT NULL,
+  `idCom` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -124,7 +124,7 @@ CREATE TABLE `UserCom` (
 --
 
 INSERT INTO `UserCom` (`idUserCom`, `nameUserCom`, `emailuserCom`, `passwordUserCom`, `dateCreationUserCom`, `usernameUserCom`, `idCom`) VALUES
-    (1, 'gerard', 'zde', 'azerty', '2023-10-09 14:45:36', 'root', 1);
+(1, 'gerard', 'zde', 'azerty', '2023-10-09 14:45:36', 'root', 1);
 
 --
 -- Index pour les tables déchargées
@@ -134,34 +134,34 @@ INSERT INTO `UserCom` (`idUserCom`, `nameUserCom`, `emailuserCom`, `passwordUser
 -- Index pour la table `Advertisement`
 --
 ALTER TABLE `Advertisement`
-    ADD PRIMARY KEY (`idAd`),
-    ADD KEY `idCom` (`idCom`);
+  ADD PRIMARY KEY (`idAd`),
+  ADD KEY `idCom` (`idCom`);
 
 --
 -- Index pour la table `Companie`
 --
 ALTER TABLE `Companie`
-    ADD PRIMARY KEY (`idCom`);
+  ADD PRIMARY KEY (`idCom`);
 
 --
 -- Index pour la table `JobApplication`
 --
 ALTER TABLE `JobApplication`
-    ADD PRIMARY KEY (`idAd`,`idUser`),
-    ADD KEY `idUser` (`idUser`);
+  ADD PRIMARY KEY (`idAd`,`idUser`),
+  ADD KEY `idUser` (`idUser`);
 
 --
 -- Index pour la table `UserApplicant`
 --
 ALTER TABLE `UserApplicant`
-    ADD PRIMARY KEY (`idUser`);
+  ADD PRIMARY KEY (`idUser`);
 
 --
 -- Index pour la table `UserCom`
 --
 ALTER TABLE `UserCom`
-    ADD PRIMARY KEY (`idUserCom`),
-    ADD KEY `idCom` (`idCom`);
+  ADD PRIMARY KEY (`idUserCom`),
+  ADD KEY `idCom` (`idCom`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -171,25 +171,25 @@ ALTER TABLE `UserCom`
 -- AUTO_INCREMENT pour la table `Advertisement`
 --
 ALTER TABLE `Advertisement`
-    MODIFY `idAd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idAd` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `Companie`
 --
 ALTER TABLE `Companie`
-    MODIFY `idCom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idCom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `UserApplicant`
 --
 ALTER TABLE `UserApplicant`
-    MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `UserCom`
 --
 ALTER TABLE `UserCom`
-    MODIFY `idUserCom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUserCom` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
@@ -199,18 +199,19 @@ ALTER TABLE `UserCom`
 -- Contraintes pour la table `Advertisement`
 --
 ALTER TABLE `Advertisement`
-    ADD CONSTRAINT `Advertisement_ibfk_1` FOREIGN KEY (`idCom`) REFERENCES `Companie` (`idCom`);
+  ADD CONSTRAINT `Advertisement_ibfk_1` FOREIGN KEY (`idCom`) REFERENCES `Companie` (`idCom`);
 
 --
 -- Contraintes pour la table `JobApplication`
 --
 ALTER TABLE `JobApplication`
-    ADD CONSTRAINT `JobApplication_ibfk_1` FOREIGN KEY (`idAd`) REFERENCES `Advertisement` (`idAd`),
-    ADD CONSTRAINT `JobApplication_ibfk_2` FOREIGN KEY (`idUser`) REFERENCES `UserApplicant` (`idUser`);
+  ADD CONSTRAINT `JobApplication_ibfk_1` FOREIGN KEY (`idAd`) REFERENCES `Advertisement` (`idAd`),
+  ADD CONSTRAINT `JobApplication_ibfk_2` FOREIGN KEY (`idUser`) REFERENCES `UserApplicant` (`idUser`);
 
 --
 -- Contraintes pour la table `UserCom`
 --
 ALTER TABLE `UserCom`
-    ADD CONSTRAINT `UserCom_ibfk_1` FOREIGN KEY (`idCom`) REFERENCES `Companie` (`idCom`);
+  ADD CONSTRAINT `UserCom_ibfk_1` FOREIGN KEY (`idCom`) REFERENCES `Companie` (`idCom`);
 COMMIT;
+
