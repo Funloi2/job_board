@@ -1,6 +1,27 @@
 button{
-    color: #333333;
-    background-color: #FFC107;
+    
+        --c:  #FFC107; /* the color*/
+        
+        box-shadow: 0 0 0 .1em inset var(--c); 
+        --_g: linear-gradient(var(--c) 0 0) no-repeat;
+        background: 
+          var(--_g) calc(var(--_p,0%) - 100%) 0%,
+          var(--_g) calc(200% - var(--_p,0%)) 0%,
+          var(--_g) calc(var(--_p,0%) - 100%) 100%,
+          var(--_g) calc(200% - var(--_p,0%)) 100%;
+        background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+        outline-offset: .1em;
+        transition: background-size .4s, background-position 0s .4s;
+      }
+      button:hover {
+        --_p: 100%;
+        transition: background-position .4s, background-size 0s;
+      }
+      button:active {
+        box-shadow: 0 0 9e9q inset #0009; 
+        background-color: var(--c);
+        color: #fff;
+      
 }
 
 footer {
@@ -19,6 +40,27 @@ header{
     color: #111111;
 }
 
+.CardLayout{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: auto;
+    background-color: #333333;
+    border-radius: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+
+
+
+}
+.card{
+    width: 28rem;
+}
+
+
 .modal-content{
     background-color: #D7CCC8;
     color: #111111;
@@ -28,3 +70,4 @@ header{
     background-color: rgba(0,0,0,0.5);
     color: #111111;
 }
+
