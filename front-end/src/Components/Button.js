@@ -1,9 +1,10 @@
 
 
-function Button(test) {
+function Button() {
   return (
-    <button onClick={test}>
-      {children}
+    <button >
+      Sign in !
     </button>
   );
 }
+export default Button;
