@@ -18,3 +18,13 @@ header{
     background-color: #D7CCC8;
     color: #111111;
 }
+
+.modal-content{
+    background-color: #D7CCC8;
+    color: #111111;
+}
+
+.modal{
+    background-color: rgba(0,0,0,0.5);
+    color: #111111;
+}

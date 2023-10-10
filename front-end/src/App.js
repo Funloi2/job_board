@@ -7,6 +7,8 @@ import {
     // RouterProvider
 } from 'react-router-dom';
 import Home from "./Components/Home";
+import Company from "./Components/Company";
+import company from "./Object/Company";
 
 
 
@@ -15,6 +17,7 @@ function App() {
         createRoutesFromElements(
             <Route path="/"  element = {<Layout />}>
                 <Route index element={<Home />} />
+                <Route path="Company" element={<Company company={company}/>} />
             </Route>
         )
     )
