@@ -1,26 +1,45 @@
-import logo from './Assets/logo.svg';
-import './App.css';
-import Button from "bootstrap/js/src/button";
+import './Style/Style.css';
+import Layout from "./Layout/Layout";
+import {
+    createBrowserRouter,
+    Route,
+    createRoutesFromElements, RouterProvider,
+    // RouterProvider
+} from 'react-router-dom';
+import Home from "./Components/Home";
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const router = createBrowserRouter(
+        createRoutesFromElements(
+            <Route path="/"  element = {<Layout />}>
+                <Route index element={<Home />} />
+            </Route>
+        )
+    )
+
+    return (
+        <>
+            <head>
+                <title>React App</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+                      crossOrigin="anonymous"/>
+
+            </head>
+            <body>
+            <div className="App">
+                <RouterProvider router={router} />
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+                    crossOrigin="anonymous"></script>
+            </body>
+
+        </>
+
+    );
 }
 
 export default App;

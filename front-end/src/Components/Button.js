@@ -1,6 +1,6 @@
 
 
-function Button(test) {
+function Button({test}) {
   return (
     <button onClick={test}>
       {children}
