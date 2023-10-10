@@ -6,14 +6,14 @@ function Footer(){
     <div className="container p-4 pb-0">
       <section className="">
         <p className="d-flex justify-content-center align-items-center">
-          <span className="me-3">Register for free</span>
-          <Button />
+          <span className="me-3">Register for free </span>
+          <Button  text="Here !" func="" />
         </p>
       </section>
     </div>
 
     <div class="text-center p-3" >
-      © 2023 Copyright: CED / Dorian
+      © 2023 Copyright: CED / Dorian 
     </div>
   </footer>
 

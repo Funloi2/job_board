@@ -1,9 +1,7 @@
-
-
-function Button() {
+function Button({text, func}) {
   return (
-    <button >
-      Sign in !
+    <button onClick={func}>
+      {text}
     </button>
   );
 }
