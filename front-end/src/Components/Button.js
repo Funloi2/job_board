@@ -1,9 +1,8 @@
-
-
-function Button({test}) {
+function Button({text, func}) {
   return (
-    <button onClick={test}>
-      {children}
+    <button onClick={func}>
+      {text}
     </button>
   );
 }
+export default Button;

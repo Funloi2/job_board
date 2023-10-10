@@ -1,4 +1,16 @@
-header{
-    background: #D7CCC8;
-    color: #111111;
+button{
+    color: #333333;
+    background-color: #FFC107;
 }
+
+footer {
+    background-color: #D7CCC8;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    border-top-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    border-top-right-radius: 50px;
+    border: black 2px;
+    
+  }
