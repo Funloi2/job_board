@@ -6,19 +6,20 @@ const Carousel = ({ cards }) => {
   const cardsPerPage = 9;
 
   const nextSlide = () => {
-    setCurrentPage((prevPage) => (prevPage + 1) % Math.ceil(cards.length / cardsPerPage));
+    setCurrentPage((prevPage) => (prevPage + 1) % Math.ceil(cards.data.length / cardsPerPage));
   };
 
   const prevSlide = () => {
     setCurrentPage((prevPage) =>
-      prevPage === 0 ? Math.ceil(cards.length / cardsPerPage) - 1 : prevPage - 1
+      prevPage === 0 ? Math.ceil(cards.data.length / cardsPerPage) - 1 : prevPage - 1
     );
   };
-  console.log(cards)
+
   const startIndex = currentPage * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
 
-  const displayedCards = cards.slice(startIndex, endIndex);
+  // Utilisez une déclaration conditionnelle pour vérifier si cards.data est défini
+  const displayedCards = cards?.data ? cards.data.slice(startIndex, endIndex) : [];
 
   return (
     <div className="carousel">
