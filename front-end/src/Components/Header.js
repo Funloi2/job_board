@@ -1,4 +1,4 @@
-import logo from '../Assets/logo.svg';
+import logo from '../Assets/Logo.png';
 import {NavLink} from "react-router-dom";
 
 
@@ -9,9 +9,7 @@ function Header() {
         <header className="App-header">
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <button className="navbar-brand">
                         <img src={logo} alt="logo" width="30" height="24" className="d-inline-block align-text-top"/>
-                    </button>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">

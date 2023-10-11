@@ -9,6 +9,8 @@ import {
 import Home from "./Components/Home";
 import Company from "./Components/Company";
 import company from "./Object/Company";
+import JobDetail from "./Components/JobDetail";
+import jobDetail from "./Object/JobDetail";
 
 
 
@@ -18,6 +20,7 @@ function App() {
             <Route path="/"  element = {<Layout />}>
                 <Route index element={<Home />} />
                 <Route path="Company" element={<Company company={company}/>} />
+                <Route path="JobDetail" element={<JobDetail jobDetail={jobDetail}/>} />
             </Route>
         )
     )
