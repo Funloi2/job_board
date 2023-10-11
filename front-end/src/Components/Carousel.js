@@ -2,24 +2,30 @@ import React, { useState } from 'react';
 import Card from './Card';
 
 const Carousel = ({ cards }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const cardsPerPage = 9;
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 9) % cards.length);
+    setCurrentPage((prevPage) => (prevPage + 1) % Math.ceil(cards.length / cardsPerPage));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? cards.length - 9 : prevIndex - 9
+    setCurrentPage((prevPage) =>
+      prevPage === 0 ? Math.ceil(cards.length / cardsPerPage) - 1 : prevPage - 1
     );
   };
+  console.log(cards)
+  const startIndex = currentPage * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+
+  const displayedCards = cards.slice(startIndex, endIndex);
 
   return (
     <div className="carousel">
       <div className="CardLayout">
-        {cards.slice(currentIndex, currentIndex + 9).map((card, index) => (
+        {displayedCards.map((card, index) => (
           <div key={index} className="slider-card">
-            <Card title={card.title} description={card.description} />
+            <Card title={card.nomAd} description={card.descriptionAd} />
           </div>
         ))}
       </div>

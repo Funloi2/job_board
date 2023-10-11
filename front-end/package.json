@@ -14,7 +14,9 @@
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "proxy": "http://localhost:3000"
+
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,5 +41,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+    
   }
 }

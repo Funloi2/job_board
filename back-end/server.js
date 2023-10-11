@@ -1,10 +1,12 @@
-const express = require('express'); 
-const app = express();
-const port = process.env.PORT || 3000; 
+import express from 'express';
+import app from './app.js';
+import cors from 'cors';
 
+app.use(cors());
+// Autres configurations et routes ici
 
-app.listen(port, () => console.log(`Listening on port ${port}`)); //Line 6
+const port = process.env.PORT || 3000;
 
-app.get('/express_backend', (req, res) => { 
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); //Line 10
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });
