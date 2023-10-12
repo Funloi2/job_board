@@ -26,7 +26,7 @@ const Carousel = ({ cards }) => {
       <div className="CardLayout">
         {displayedCards.map((card, index) => (
           <div key={index} className="slider-card">
-            <Card title={card.nomAd} description={card.descriptionAd} salary={card.salaireAd} />
+            <Card title={card.nomAd} description={card.descriptionAd} salary={card.salaireAd} id={card.idAd} />
           </div>
         ))}
       </div>

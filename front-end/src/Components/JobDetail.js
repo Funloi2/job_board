@@ -1,6 +1,25 @@
+import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
 
 
-function JobDetail({jobDetail}){
+function JobDetail(){
+    const { id } = useParams();
+    const [jobDetail, setJobDetail] = useState(null);
+
+    useEffect(() => {
+        fetch(`http://localhost:3000/advertisement/${id}`) 
+          .then(response => response.json())
+          .then(data => setJobDetail(data))
+          .catch(error => console.error('Erreur lors de la récupération des détails de l\'annonce:', error));
+      }, [id]);
+      console.log(jobDetail);
+      if (!jobDetail) {
+        return <div>Loading...</div>; 
+      }
+
+
+
+     
 
 
     return(
