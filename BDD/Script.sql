@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 11 oct. 2023 à 17:04
+-- Généré le : ven. 13 oct. 2023 à 12:01
 -- Version du serveur :  10.3.38-MariaDB-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3-4ubuntu2.19
 
@@ -36,6 +36,7 @@ CREATE TABLE `Advertisement` (
   `salaireAd` int(11) DEFAULT NULL,
   `typeAd` varchar(50) DEFAULT NULL,
   `contractAd` varchar(50) DEFAULT NULL,
+  `VilleAd` varchar(50) NOT NULL,
   `idCom` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -43,26 +44,26 @@ CREATE TABLE `Advertisement` (
 -- Déchargement des données de la table `Advertisement`
 --
 
-INSERT INTO `Advertisement` (`idAd`, `nomAd`, `dateCreationAd`, `descriptionAd`, `salaireAd`, `typeAd`, `contractAd`, `idCom`) VALUES
-(1, 'Poste dev 1', '2023-10-09 14:43:40', 'super poste', 300, 'CDI', 'FULL REMOTE', 1),
-(2, 'Réseau', '2023-10-09 14:43:40', 'sijdnzdzabdukcqfre', 301, 'CDI', 'SEMI REMOTE', 1),
-(3, 'Dev Php', '2023-10-11 16:55:55', 'Super job, cookie gratuit', 30, 'Present', 'CDD', 1),
-(4, 'Hey 1', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(5, 'Hey 2', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(6, 'Hey 3', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(7, 'Hey 4', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(8, 'Hey 5', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(9, 'Hey 6', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(10, 'Hey 7', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(11, 'Hey 8', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(12, 'Hey 9', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(13, 'Hey 10', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(14, 'Hey 10', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(15, 'Hey 12', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(16, 'Hey 13', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(17, 'Hey 14', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(18, 'Hey 15', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1),
-(19, 'Hey 16', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 1);
+INSERT INTO `Advertisement` (`idAd`, `nomAd`, `dateCreationAd`, `descriptionAd`, `salaireAd`, `typeAd`, `contractAd`, `VilleAd`, `idCom`) VALUES
+(1, 'Poste dev 1', '2023-10-09 14:43:40', 'super poste', 300, 'CDI', 'FULL REMOTE', 'Montpellier', 1),
+(2, 'Réseau', '2023-10-09 14:43:40', 'sijdnzdzabdukcqfre', 301, 'CDI', 'SEMI REMOTE', 'Agde', 1),
+(3, 'Dev Php', '2023-10-11 16:55:55', 'Super job, cookie gratuit', 30, 'Present', 'CDD', 'Chez Benoit', 1),
+(4, 'Hey 1', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Sauvian', 1),
+(5, 'Hey 2', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Valros', 1),
+(6, 'Hey 3', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Montpellier', 1),
+(7, 'Hey 4', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Sete', 1),
+(8, 'Hey 5', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Chez Nans', 1),
+(9, 'Hey 6', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Chez Charles', 1),
+(10, 'Hey 7', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Epietch', 1),
+(11, 'Hey 8', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Nimes', 1),
+(12, 'Hey 9', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Nimes', 1),
+(13, 'Hey 10', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Nimes', 1),
+(14, 'Hey 10', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Ales', 1),
+(15, 'Hey 12', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Ales', 1),
+(16, 'Hey 13', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Ales', 1),
+(17, 'Hey 14', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Paris', 1),
+(18, 'Hey 15', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Marseille', 1),
+(19, 'Hey 16', '2023-10-11 16:57:26', 'zdzdzd', 52, 'Present', 'CDI', 'Nimes', 1);
 
 -- --------------------------------------------------------
 
