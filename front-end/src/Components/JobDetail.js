@@ -12,9 +12,14 @@ function JobDetail(){
           .then(data => setJobDetail(data))
           .catch(error => console.error('Erreur lors de la récupération des détails de l\'annonce:', error));
       }, [id]);
-      console.log(jobDetail);
+
       if (!jobDetail) {
-        return <div>Loading...</div>; 
+
+          return(
+
+            <div> Loading...</div>
+            );
+
       }
 
 

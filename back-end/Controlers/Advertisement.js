@@ -1,7 +1,7 @@
 import  pool  from "./../config.js"
 import Advertisement from './../routes/advertisement.js';
 
-export const getAllAdvertissment = async (req, res) => {
+export const getAllAdvertisement = async (req, res) => {
     try {
         const result = await pool.query(`SELECT * FROM Advertisement`);
         res.status(200).json({  data: result});
