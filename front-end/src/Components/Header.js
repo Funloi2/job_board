@@ -1,9 +1,31 @@
 import logo from '../Assets/Logo.png';
 import {NavLink} from "react-router-dom";
+import React, { useState } from "react";
+import Login from "./Login";
 
 
 function Header() {
 
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
+
+
+    const openLogin = () => {
+        setIsLoginOpen(true);
+    }
+
+    const closeLogin = () => {
+        setIsLoginOpen(false);
+    }
+
+    const openRegister = () => {
+        setIsRegisterOpen(true);
+    }
+
+    const closeRegister = () => {
+        setIsRegisterOpen(false);
+    }
 
     return (
         <header className="App-header">
@@ -23,10 +45,11 @@ function Header() {
                         </ul>
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <NavLink to="/login" className="nav-link me-2" aria-current="page">Login</NavLink>
+                                <button onClick={openLogin} className="nav-link me-2 btn btn-link" aria-current="page">Login</button>
+                                <Login isOpen={isLoginOpen} onClose={closeLogin} />
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/register" className="nav-link me-2" aria-current="page">Register</NavLink>
+                                <button onClick={openRegister} className="nav-link me-2 btn btn-link" aria-current="page">Register</button>
                             </li>
                         </ul>
 

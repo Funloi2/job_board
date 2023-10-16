@@ -14,14 +14,14 @@ button{
         transition: background-size .4s, background-position 0s .4s;
       }
       button:hover {
+          background-color: #0056B3;
         --_p: 100%;
         transition: background-position .4s, background-size 0s;
       }
       button:active {
-        box-shadow: 0 0 9e9q inset #0009; 
-        background-color: var(--c);
+        box-shadow: 0 0 9e9q inset #0009;
+        background-color: #0056B3;
         color: #fff;
-      
 }
 
 footer {
