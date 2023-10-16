@@ -1,10 +1,10 @@
 import express from "express";
 
-import { getAdvertisementById, getAllAdvertisement } from "./../Controlers/Advertisement.js";
-
+import { getAllAdvertissment } from "./../Controlers/Advertisement.js";
+import { getAdvertisementById } from "./../Controlers/Advertisement.js";
 const router = express.Router();
 
-router.get('/', getAllAdvertisement);
+router.get('/', getAllAdvertissment);
 router.get('/:id',getAdvertisementById);
 
 export default router;

@@ -13,21 +13,21 @@ function JobDetail() {
             .catch(error => console.error('Erreur lors de la récupération des détails de l\'annonce:', error));
         }, [id]);
 
-    //   useEffect(() => {
+       useEffect(() => {
 
-    //   if (jobDetail && jobDetail.data) {
-    //      console.log(jobDetail.data.idCom);
-    //       fetch(`http://localhost:3000/companie/${jobDetail.data.idCom}`)
-    //           .then(response => response.json())
-    //           .then(data => { 
-    //             setCompanyName(data.companyName);
-    //             console.log("companyName inside useEffect:", data.companyName);
-    //         })
+       if (jobDetail && jobDetail.data) {
+        
+        
+           fetch(`http://localhost:3000/companie/${jobDetail.data.idCom}`)
+               .then(response => response.json())
+               .then(data => { 
+                 setCompanyName(data.companyName);
+                console.log("companyName inside useEffect:", data.data.nomCom);
+            })
 
-    //           .catch(error => console.error('Erreur lors de la récupération du nom de la compagnie :', error));
-    //   }
-    //       }, [jobDetail]);
-    //       console.log(companyName)
+              .catch(error => console.error('Erreur lors de la récupération du nom de la compagnie :', error));
+      }
+          }, [jobDetail]);
          
 
      if (!jobDetail ) {
@@ -42,7 +42,7 @@ function JobDetail() {
             <h1 className="text-center mb-5">{jobDetail.data.nomAd}</h1>
             <div className="row">
                 <div className="col me-5 pe-5">
-                    { <p><strong>Company:</strong> {companyName}</p> }
+                    { <p><strong>Company:</strong> {companyName.data.data.nomCom}</p> }
                     <p><strong>Salary:</strong> {jobDetail.data.salaireAd}</p>
                     <p><strong>Contract:</strong> {jobDetail.data.contractAd}</p>
                 </div>
