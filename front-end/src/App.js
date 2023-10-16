@@ -10,9 +10,8 @@ import Home from "./Components/Home";
 import Company from "./Components/Company";
 import company from "./Object/Company";
 import JobDetail from "./Components/JobDetail";
-// import jobDetail from "./Object/JobDetail";
-
-
+import Login from "./Components/Login";
+import Register from "./Components/Register";
 
 function App() {
     const router = createBrowserRouter(
@@ -21,7 +20,8 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="Company" element={<Company company={company}/>} />
                 <Route path="/JobDetail/:id" Component={JobDetail} />
-                {/* <Route path="JobDetail" element={<JobDetail jobDetail={jobDetail}/>} /> */}
+                <Route path="/Login" element={<Login />} />
+                <Route path="/Register" element={<Register />} />
             </Route>
         )
     )
