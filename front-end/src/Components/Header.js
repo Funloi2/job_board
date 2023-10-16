@@ -2,6 +2,7 @@ import logo from '../Assets/Logo.png';
 import {NavLink} from "react-router-dom";
 import React, { useState } from "react";
 import Login from "./Login";
+import Register from "./Register";
 
 
 function Header() {
@@ -50,6 +51,7 @@ function Header() {
                             </li>
                             <li className="nav-item">
                                 <button onClick={openRegister} className="nav-link me-2 btn btn-link" aria-current="page">Register</button>
+                                <Register isOpen={isRegisterOpen} onClose={closeRegister} />
                             </li>
                         </ul>
 
