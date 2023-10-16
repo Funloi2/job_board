@@ -13,21 +13,21 @@ function JobDetail() {
             .catch(error => console.error('Erreur lors de la récupération des détails de l\'annonce:', error));
         }, [id]);
 
-      useEffect(() => {
+    //   useEffect(() => {
 
-      if (jobDetail && jobDetail.data) {
-         console.log(jobDetail.data.idCom);
-          fetch(`http://localhost:3000/companie/${jobDetail.data.idCom}`)
-              .then(response => response.json())
-              .then(data => { 
-                setCompanyName(data.companyName);
-                console.log("companyName inside useEffect:", data.companyName);
-            })
+    //   if (jobDetail && jobDetail.data) {
+    //      console.log(jobDetail.data.idCom);
+    //       fetch(`http://localhost:3000/companie/${jobDetail.data.idCom}`)
+    //           .then(response => response.json())
+    //           .then(data => { 
+    //             setCompanyName(data.companyName);
+    //             console.log("companyName inside useEffect:", data.companyName);
+    //         })
 
-              .catch(error => console.error('Erreur lors de la récupération du nom de la compagnie :', error));
-      }
-          }, [jobDetail]);
-          console.log(companyName)
+    //           .catch(error => console.error('Erreur lors de la récupération du nom de la compagnie :', error));
+    //   }
+    //       }, [jobDetail]);
+    //       console.log(companyName)
          
 
      if (!jobDetail ) {

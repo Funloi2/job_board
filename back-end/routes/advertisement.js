@@ -5,6 +5,6 @@ import { getAdvertisementById, getAllAdvertisement } from "./../Controlers/Adver
 const router = express.Router();
 
 router.get('/', getAllAdvertisement);
-router.get('/advertisement/:id',getAdvertisementById);
+router.get('/:id',getAdvertisementById);
 
 export default router;
