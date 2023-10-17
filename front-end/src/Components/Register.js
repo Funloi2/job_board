@@ -35,6 +35,11 @@ function Register({isOpen, onClose}){
                                     <label htmlFor="password" className="form-label">Confirm Password</label>
                                     <input type="password" className="form-control" id="password" name="password"/>
                                 </div>
+                                <div className="mb-3">
+                                    <label htmlFor="isCompany" className="form-label">Are you a company?</label>
+                                    <input className="ms-2" type="checkbox" id="isCompany" name="isCompany" value="true"/>
+
+                                </div>
                                 <button type="submit">Register</button>
                             </form>
                         </div>
