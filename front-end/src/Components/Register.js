@@ -4,8 +4,10 @@ function Register({ isOpen, onClose }) {
     console.log(e);
     const formData = new FormData(e.target);
 
-    const data = Object.fromEntries(formData);
-    console.log(data);
+    const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
     fetch("http://localhost:3000/register", {
       method: "POST",
       headers: {
@@ -49,7 +51,7 @@ function Register({ isOpen, onClose }) {
               ></button>
             </div>
             <div className="modal-body">
-              <form action="/register" method="post">
+              <form action="/register" method="post" onSubmit={handRegister}>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
                     Email address
@@ -119,7 +121,7 @@ function Register({ isOpen, onClose }) {
                     value="true"
                   />
                 </div>
-                <button type="submit" onClick={handRegister}>
+                <button type="submit">
                   Register
                 </button>
               </form>
