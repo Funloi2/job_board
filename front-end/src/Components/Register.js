@@ -1,6 +1,7 @@
 
 
 function Register({isOpen, onClose}){
+
     return (
         isOpen && (
             <div className="modal" tabIndex="-1" role="dialog" style={{display: 'block'}}>
@@ -20,7 +21,7 @@ function Register({isOpen, onClose}){
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="name" className="form-label">Name</label>
-                                    <input type="email" className="form-control" id="name" name="name"/>
+                                    <input type="text" className="form-control" id="name" name="name"/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="username" className="form-label">Username</label>

@@ -5,6 +5,7 @@
     "mariadb": "^3.2.1"
   },
   "scripts": {
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
   "name": "back-end",

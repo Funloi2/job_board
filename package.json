@@ -1,0 +1,25 @@
+{
+  "name": "t-web-501-mpl_7",
+  "version": "1.0.0",
+  "description": "Ce projet est un projet de fin de piscine à Epitech.\r     Il consiste à créer un site web qui permet de gérer des annonces de travail.\r     Le site est composé de deux parties, une partie front-end et une partie back-end.\r     Le front-end est codé en React et le back-end en Node.js en utilisant Express.\r     Il y a aussi une base de données qui est gérée par MySQL. Le script de création de la base de données est dans le dossier BDD ainsi que l'UML.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EpitechMscProPromo2026/T-WEB-501-MPL_7.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechMscProPromo2026/T-WEB-501-MPL_7/issues"
+  },
+  "homepage": "https://github.com/EpitechMscProPromo2026/T-WEB-501-MPL_7#readme",
+  "devDependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1"
+  }
+}
