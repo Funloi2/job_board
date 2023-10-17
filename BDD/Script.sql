@@ -235,6 +235,18 @@ ALTER TABLE `UserCom`
   ADD CONSTRAINT `UserCom_ibfk_1` FOREIGN KEY (`idCom`) REFERENCES `Companie` (`idCom`);
 COMMIT;
 
+alter table advertisement
+    alter column dateCreationAd set default (current_time);
+
+alter table jobapplication
+    alter column dateCreationJA set default (current_time);
+
+alter table userapplicant
+    alter column dateCreationUser set default (current_time);
+
+alter table usercom
+    alter column dateCreationUserCom set default (current_time);
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
