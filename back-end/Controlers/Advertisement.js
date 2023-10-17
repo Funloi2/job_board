@@ -1,5 +1,4 @@
 import  pool  from "./../config.js"
-import Advertisement from './../routes/advertisement.js';
 
 export const getAllAdvertissment = async (req, res) => {
     try {
