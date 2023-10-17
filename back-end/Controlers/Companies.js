@@ -4,7 +4,7 @@ export const getCompanieByAd = async (req, res) => {
     try {
         const { id } = req.params;
     
-        const query = "SELECT nomCom FROM Companie WHERE idCom = ?";
+        const query = "SELECT * FROM Companie WHERE idCom = ?";
         const result = await pool.query(query, [id]);
         
         if (result.length > 0) {

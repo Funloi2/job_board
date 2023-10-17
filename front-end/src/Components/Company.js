@@ -25,17 +25,20 @@ function Company({isOpen, onClose, company}) {
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="modal-header bg-dark text-white">
-                            <h5 className="modal-title">{company.name}</h5>
+                            <h5 className="modal-title">{company.data.nomCom}</h5>
                             <button type="button" className="btn-close bg-white" data-bs-dismiss="modal"
                                     aria-label="Close" onClick={onClose}></button>
                         </div>
                         <div className="modal-body">
-                            <p>{company.description}</p>
-                            <p><strong>Employee:</strong> {company.nbEmployee}</p>
+                            <p><strong>Address:</strong> {company.data.addressCom}</p>
+                            <p><strong>City:</strong> {company.data.villeCom}</p>
+
+                            <p><strong>Employee:</strong> {company.data.nbEmployeeCom}</p>
+                            <p><strong>Description:</strong> {company.data.descriptionCom}</p>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
-                                    onClick={onClose} >Close
+                                    onClick={onClose}>Close
                             </button>
                         </div>
                     </div>

@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Company from "./Company";
+
 
 function JobDetail() {
   const { id } = useParams();
   const [jobDetail, setJobDetail] = useState(null);
-  const [companyName, setCompanyName] = useState(null);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [company, setCompany] = useState(null);
+
+  const openCompany = () => {
+    setIsCompanyOpen(true);
+  };
+
+  const closeCompany = () => {
+    setIsCompanyOpen(false);
+  };
 
   useEffect(() => {
     fetch(`http://localhost:3000/advertisement/${id}`)
@@ -23,7 +34,7 @@ function JobDetail() {
       fetch(`http://localhost:3000/companie/${jobDetail.data.idCom}`)
         .then((response) => response.json())
         .then((data) => {
-          setCompanyName(data.data.nomCom);
+          setCompany(data);
         })
 
         .catch((error) =>
@@ -38,9 +49,13 @@ function JobDetail() {
   if (!jobDetail) {
     return <div>Loading...</div>;
   }
-     if (!companyName) {
+     if (!company) {
        return <div>Loading...</div>;
      }
+
+
+
+
 
   return (
     <div className="jobCard">
@@ -51,8 +66,9 @@ function JobDetail() {
           {
             
             <p>
-              
-              <strong>Company:</strong> {companyName}
+              {/*TODO: changer le button en lien pour un meilleur visuel*/}
+              <strong>Company:</strong> <button onClick={openCompany} className="nav-link me-2 btn btn-link" aria-current="page">{company.data.nomCom}</button>
+               <Company isOpen={isCompanyOpen} onClose={closeCompany} company={company}/>
             </p>
           }
           <p>
