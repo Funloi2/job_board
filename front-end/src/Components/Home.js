@@ -18,7 +18,6 @@ function Home() {
         )
       );
   }, []);
-  console.log(advertisementData);
   return (
     <div>
       <div className="CardLayout">
