@@ -2,7 +2,6 @@ import  pool  from "./../config.js"
 
 export const postUser = async (req, res) => {
     try {
-        // TODO: fix register
         const bcrypt = require('bcrypt');
         const saltRounds = 10;
         const {email, name, username, password, isCompany} = req.body;

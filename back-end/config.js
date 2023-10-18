@@ -4,7 +4,7 @@ const pool = mariadb.createPool({
   host: "localhost",
   user: "root",
   password: "",
-  database: "JobBoard",
+  database: "jobboard",
 });
 
 pool.getConnection((err) => {
