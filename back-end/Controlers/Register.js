@@ -1,5 +1,5 @@
 import  pool  from "./../config.js"
-
+console.log("coucou")
 export const postUser = async (req, res) => {
     try {
         // TODO: fix register
