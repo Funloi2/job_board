@@ -1,14 +1,17 @@
 import  pool  from "./../config.js"
+import bcrypt from "bcrypt";
+
 
 export const postUser = async (req, res) => {
     try {
-        const bcrypt = require('bcrypt');
         const saltRounds = 10;
-        const {email, name, username, password, isCompany} = req.body;
+        const {email, name, username, password} = req.body;
         const passwordHash = await bcrypt.hash(password, saltRounds);
-            const newUser = await pool.query("INSERT INTO userapplicant (emailUser, nameUser, usernameUser, passwordUser)" +
-                "VALUES (?, ?, ?, ?)", [email, name, username, passwordHash, isCompany]);
-            res.status(200).json(newUser);
+        const newUser = await pool.query(
+            "INSERT INTO userapplicant (emailUser, nameUser, usernameUser, passwordUser) VALUES (?, ?, ?, ?)",
+            [email, name, username, passwordHash]
+        );
+        res.status(200).json(newUser);
         
 
 
