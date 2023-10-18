@@ -2,9 +2,9 @@ import mariadb from "mariadb";
 
 const pool = mariadb.createPool({
   host: "localhost",
-  user: "root",
-  password: "",
-  database: "jobboard",
+  user: "admin",
+  password: "admin",
+  database: "JobBoard",
 });
 
 pool.getConnection((err) => {

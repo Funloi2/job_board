@@ -1,9 +1,7 @@
-import toast from "bootstrap/js/src/toast";
+
 
 function Register({isOpen, onClose}) {
     // TODO: add pop up and hide data from url
-
-    const handleRegister = (e) => {
         const formData = new FormData(e.target);
         const data = {};
         formData.forEach((value, key) => {
@@ -30,9 +28,6 @@ function Register({isOpen, onClose}) {
             .catch((error) => {
                 console.log(error);
             });
-
-
-    };
 
     return (
         isOpen && (

@@ -1,6 +1,5 @@
-import  pool  from "./../config.js"
+import  pool  from "./../config.js";
 import bcrypt from "bcrypt";
-
 
 export const postUser = async (req, res) => {
     try {
