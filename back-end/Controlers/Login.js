@@ -1,24 +1,28 @@
-import pool from "./../config.js";
+import  pool  from "./../config.js";
+import bcrypt from "bcrypt";
 
-export const loginUser = async (req, res) => {
+export const verifyLogin = async (req, res) => {
     try {
-        const bcrypt = require('bcrypt');
-        const { email, password } = req.body;
-        
-        const user = await pool.query(
-            "SELECT * FROM userapplicant WHERE emailUser = ?",
-            [email]
+        const saltRounds = 10;
+        const {email, password} = req.body;
+        const getUser = await pool.query(
+            "SELECT * FROM userapplicant WHERE emailUser = ?", [email]
         );
-        if (user.length === 0) {
-            return res.status(401).json({ message: "Utilisateur non trouvé" });
+        if(getUser.length === 0) {
+            res.status(400).json({message: "Email ou mot de passe incorrect"});
         }
-        const passwordMatch = await bcrypt.compare(password, user[0].passwordUser);
-        if (!passwordMatch) {
-            return res.status(401).json({ message: "Mot de passe incorrect" });
+        const passwordHash = await bcrypt.compare(password, getUser[0].passwordUser);
+        if(!passwordHash) {
+            res.status(400).json({message: "Email ou mot de passe incorrect"});
         }
-        res.status(200).json({ message: "Connexion réussie" });
+
+        res.status(200).json(getUser);
+
+
+
+
     } catch (error) {
         console.error(error);
-        res.status(400).json({ message: "Requête échouée" });
+        res.status(400).json({message: "Requête échouée"});
     }
 }
