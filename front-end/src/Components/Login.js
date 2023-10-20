@@ -1,4 +1,34 @@
+
 function login({isOpen, onClose}) {
+
+    const handleLogin = (e) => {
+        const formData = new FormData(e.target);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            credentials: "include",
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error("Something went wrong");
+
+            })
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
 
     return (
         isOpen && (
@@ -11,7 +41,7 @@ function login({isOpen, onClose}) {
                                     aria-label="Close" onClick={onClose}></button>
                         </div>
                         <div className="modal-body">
-                            <form action="/login" method="post">
+                            <form onSubmit={handleLogin}>
                                 <div className="mb-3">
                                     <label htmlFor="email" className="form-label">Email address</label>
                                     <input type="email" className="form-control" id="email" name="email"

@@ -11,7 +11,6 @@ export const postUser = async (req, res) => {
             [email, name, username, passwordHash]
         );
         res.status(200).json(newUser);
-        
 
 
 
